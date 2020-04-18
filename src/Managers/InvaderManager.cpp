@@ -10,7 +10,7 @@ InvaderManager::InvaderManager(GLWindow& window)
 			for (int z = 0; z < 3; z++) {
 				invaderVector.emplace_back(new Invader(window, INVADER_MODEL_LOCATION));
 				invaderVector[selected]->setModelPosition(glm::vec3(x, y, z));
-				invaderVector[selected]->setScale(glm::vec3(0.1));
+				invaderVector[selected]->setScale(glm::vec3(0.3));
 				selected++;
 			}
 		}

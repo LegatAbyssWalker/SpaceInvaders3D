@@ -22,3 +22,4 @@
 // Models
 #define INVADER_MODEL_LOCATION "res/models/invaders/crab/crab.obj"
 #define SHIELD_MODEL_LOCATION "res/models/shield/shield.obj"
+#define BULLET_MODEL_LOCATION "res/models/bullet/wall.obj"

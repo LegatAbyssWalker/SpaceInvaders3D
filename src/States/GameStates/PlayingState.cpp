@@ -58,14 +58,15 @@ void PlayingState::updateEvents() {
 		}
 
 		// Keyboard
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { player->keyboardUpdate(Movement::FORWARD,  deltaTime); }
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) { player->keyboardUpdate(Movement::LEFT,     deltaTime); }
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) { player->keyboardUpdate(Movement::BACKWARD, deltaTime); }
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) { player->keyboardUpdate(Movement::RIGHT,    deltaTime); }
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))	 { player->keyboardUpdate(Movement::FORWARD,  deltaTime); }
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))	 { player->keyboardUpdate(Movement::LEFT,     deltaTime); }
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))	 { player->keyboardUpdate(Movement::BACKWARD, deltaTime); }
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))	 { player->keyboardUpdate(Movement::RIGHT,    deltaTime); }
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) { player->keyboardUpdate(Movement::SHOOTING, deltaTime); }
 
 		// REMOVE
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space))  { player->keyboardUpdate(Movement::UP,   deltaTime); }
-		if (sf::Keyboard::isKeyPressed(sf::Keyboard::LShift)) { player->keyboardUpdate(Movement::DOWN, deltaTime); }
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))  { player->keyboardUpdate(Movement::UP,   deltaTime); }
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) { player->keyboardUpdate(Movement::DOWN, deltaTime); }
 	}
 }
 
@@ -81,7 +82,7 @@ void PlayingState::update() {
 	
 	// Shields
 	for (auto& shield : shieldVector) {
-		// shield->update(player->getBullet(), invaderManager->getBullet(InvaderBullet::SLOW_BULLET));
+		// shield->update(player->getBullet(), invaderManager->getBullet());
 	}
 
 

@@ -8,9 +8,12 @@
 #include "../Shaders/Program.h"
 #include "../Models/Functionality/Object.h"
 #include "../Models/Entities/Entity.h"
+#include "../Models/Entities/Bullet.h"
+
 
 #include <iostream>
 #include <memory>
+
 
 class Player {
 	public:
@@ -22,9 +25,12 @@ class Player {
 		void render(const glm::mat4 viewMatrix, const glm::mat4& projection);
 
 		Camera& getCamera() { return camera; }
-
+		std::unique_ptr<Bullet>& getBullet() { return bullet; }
 
 	private:
+		std::unique_ptr<Bullet> bullet = nullptr;
+		bool shooting = false;
+
 		Movement movement;
 		GLWindow& window;
 

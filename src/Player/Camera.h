@@ -16,7 +16,8 @@ enum Movement {
 	BACKWARD,
 	RIGHT,
 	UP,
-	DOWN
+	DOWN,
+	SHOOTING
 };
 
 
