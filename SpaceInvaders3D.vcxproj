@@ -144,6 +144,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Models\Entities\Bullet.cpp" />
     <ClCompile Include="src\Display\GLWindow.cpp" />
     <ClCompile Include="src\Game.cpp" />
     <ClCompile Include="src\GUI\Font.cpp" />
@@ -163,6 +164,7 @@
     <ClCompile Include="src\States\GameStates\PlayingState.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Models\Entities\Bullet.h" />
     <ClInclude Include="src\Display\GLWindow.h" />
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\GUI\Font.h" />

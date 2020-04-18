@@ -6,6 +6,7 @@ PlayingState::PlayingState(StateMachine &machine, GLWindow &window, bool replace
 	// Player
 	player = std::make_unique<Player>(window, glm::vec3(X_BORDER_MIN, 0, Z_BORDER_MIN), window.getPerspectiveMatrix());
 
+
 	// Shields
 	glm::vec3 shieldPositions[6] = {
 			glm::vec3(1.0, 4.0, 0.5),
@@ -25,6 +26,7 @@ PlayingState::PlayingState(StateMachine &machine, GLWindow &window, bool replace
 
 	// InvaderManager
 	invaderManager = std::make_unique<InvaderManager>(window);
+
 
 	// Window
 	this->window.setMouseVisible(false);
