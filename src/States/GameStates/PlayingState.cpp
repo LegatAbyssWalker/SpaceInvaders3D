@@ -4,22 +4,22 @@ PlayingState::PlayingState(StateMachine &machine, GLWindow &window, bool replace
 	: State(machine, window, replace), window(window) {
 
 	// Player
-	player = std::make_unique<Player>(window, glm::vec3(X_BORDER_MIN, 0, Z_BORDER_MAX - 1), window.getPerspectiveMatrix());
+	player = std::make_unique<Player>(window, glm::vec3(X_BORDER_MIN, 0, Z_BORDER_MIN), window.getPerspectiveMatrix());
 
 	// Shields
 	glm::vec3 shieldPositions[6] = {
-			glm::vec3(0.5, 3.0, 6),
-			glm::vec3(0.5, 3.0, 3.5),
-			glm::vec3(2.5, 3.0, 1.5),
-			glm::vec3(2.5, 3.0, 3.5),
-			glm::vec3(4.5, 3.0, 1.5),
-			glm::vec3(4.5, 3.0, 3.5),
+			glm::vec3(1.0, 4.0, 0.5),
+			glm::vec3(1.0, 4.0, 1.5),
+			glm::vec3(5.0, 4.0, 0.5),
+			glm::vec3(5.0, 4.0, 1.5),
+			glm::vec3(9.0, 4.0, 0.5),
+			glm::vec3(9.0, 4.0, 1.5),
 	};
 
 	for (int i = 0; i < 6; i++) {
 		shieldVector.emplace_back(new Shield(window, SHIELD_MODEL_LOCATION));
 		shieldVector[i]->setModelPosition(shieldPositions[i]);
-		shieldVector[i]->setScale(glm::vec3(0.5));
+		shieldVector[i]->setScale(glm::vec3(0.3));
 	}
 
 
@@ -74,6 +74,9 @@ void PlayingState::update() {
 
 	// Player
 	player->update();
+
+	std::cout << "X: " << player->getCamera().getPosition().x << '\n'; 
+	std::cout << "Z: " << player->getCamera().getPosition().z << '\n';
 
 	// Shields
 	for (auto& shield : shieldVector) {
