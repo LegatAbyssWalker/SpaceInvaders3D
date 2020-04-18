@@ -72,16 +72,16 @@ void PlayingState::update() {
 	deltaTime = now - lastFrame;
 	lastFrame = now;
 
+
 	// Player
 	player->update();
 
-	std::cout << "X: " << player->getCamera().getPosition().x << '\n'; 
-	std::cout << "Z: " << player->getCamera().getPosition().z << '\n';
-
+	
 	// Shields
 	for (auto& shield : shieldVector) {
 		// shield->update(player->getBullet(), invaderManager->getBullet(InvaderBullet::SLOW_BULLET));
 	}
+
 
 	// InvaderManager
 	invaderManager->update();
