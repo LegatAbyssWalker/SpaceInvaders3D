@@ -82,7 +82,7 @@ void PlayingState::update() {
 	
 	// Shields
 	for (auto& shield : shieldVector) {
-		// shield->update(player->getBullet(), invaderManager->getBullet());
+		// shield->update(player->getBullet(), invaderManager->getBullet(0), invaderManager->getBullet(1));
 	}
 
 

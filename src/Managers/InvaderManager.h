@@ -12,6 +12,8 @@
 #include "../Player/Player.h"
 #include "../Models/Entities/Entity.h"
 #include "../Utilities/Random.h"
+#include "../Models/Entities/Bullet.h"
+#include "../Models/Entities/Shield.h"
 
 
 class InvaderManager {
@@ -21,16 +23,28 @@ class InvaderManager {
 		void update();
 		void render(const glm::mat4 viewMatrix, const glm::mat4& projection);
 
-		bool collisions(std::unique_ptr<Entity>& entity);
-		void handleCollisions();
-
+		std::unique_ptr<Invader> playerBulletCollision(std::unique_ptr<Player>& player);
+		bool invaderBulletCollision(std::unique_ptr<Player>& player);
+		bool invaderCollision(std::unique_ptr<Player>& player);
+		
 		void removeEntities();
 
+		std::unique_ptr<Bullet>& getBullet(int type) { return bulletVector[type]; }
+
+
 	private:
+		glm::mat4 test;
+
 		GLWindow& window;
-		Random<> random;
+		std::array<Random<>, 2> random;
 
 		std::vector<std::unique_ptr<Invader>> invaderVector;
+		std::vector<std::unique_ptr<Bullet>> bulletVector;
+
+
+		int invaderMax = 0;
+		int invadersLeft = invaderMax;
+		int shooter = 0;
 
 		bool towardsPositiveX = false;
 		bool towardsNegativeY = false;
